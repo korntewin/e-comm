@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Link} from 'react-router-dom';
 import HomePage from "./components/pages/homepage/homepage.component"
 
-const JustAnotherPage = () => {
+const JustAnotherPage = (props) => {
   return (
-    <h1>Another Page</h1>
+    <div>
+      {console.log(props)}
+      <Link to = '/'>Link path</Link>
+      <button onClick={()=> props.history.push('/')}> Btn path</button>
+      <h1>Another Page</h1>
+    </div>
   )
 }
 
@@ -14,8 +19,8 @@ function App() {
 
     <div className = "App">
       <Switch>
-        <Route path = '/' component = {HomePage} />
-        <Route path='/another' component = {JustAnotherPage} />
+        <Route exact path = '/' component = {HomePage} />
+        <Route path='/shop/hats' component = {JustAnotherPage} />
       </Switch>
     </div>
   );

@@ -1,9 +1,13 @@
 import React from "react"
+import {withRouter} from 'react-router-dom'
 import "./menu-item.styles.scss"
 
-export const MenuItem = ({title, subtitle, imageUrl, size}) => (
+export const MenuItem = withRouter(({title, subtitle, imageUrl, size, linkUrl, history, match}) => (
     <div 
-        className = {`menu-item ${size}`}>
+        className = {`menu-item ${size}`}
+        onClick = {()=> {
+            // console.log(match) match.url is the path of HomePage component
+            history.push(`${match.url}${linkUrl}`)}}>
         <div 
             style = {{
                 backgroundImage: `url(${imageUrl})`
@@ -15,4 +19,6 @@ export const MenuItem = ({title, subtitle, imageUrl, size}) => (
             <span className="sub-title">{subtitle}</span>
         </div>
     </div>
-)
+))
+
+// withRouter(MenuItem);
