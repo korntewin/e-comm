@@ -6,17 +6,6 @@ import ShopPage from "./components/pages/shoppage/shoppage.components"
 import Header from "./components/header/header.components"
 import SigninPage from "./components/pages/signin-page/signin-page.components"
 
-const JustAnotherPage = (props) => {
-  return (
-    <div>
-      {console.log(props)}
-      <Link to = '/'>Link path</Link>
-      <button onClick={()=> props.history.push('/')}> Btn path</button>
-      <h1>Another Page</h1>
-    </div>
-  )
-}
-
 function App() {
   return (
 
