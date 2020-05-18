@@ -10,7 +10,6 @@ const SigninPage = (props) => (
             <Signin />
         </div>
         <div className = "sign-up">
-
         </div>
 
     </div>
